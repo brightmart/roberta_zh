@@ -75,8 +75,8 @@ dynamic mask在本项目中没有实现
 
 
 -------------------------------------------------
-本项目受到 TensorFlow Research Cloud (TFRC) 资助 This project is supp
-
+本项目受到 TensorFlow Research Cloud (TFRC) 资助 / Project supported with Cloud TPUs from Google's TensorFlow Research Cloud (TFRC)
+ 
 Reference
 -------------------------------------------------
 1、<a href="https://arxiv.org/pdf/1907.11692.pdf">RoBERTa: A Robustly Optimized BERT Pretraining Approach</a>
