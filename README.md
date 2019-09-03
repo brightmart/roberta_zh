@@ -1,13 +1,13 @@
-中文预训练RoBERTa模型 tensorflow/Pytorch版本
+RoBERTa for Chinese
 
-中文预训练RoBERTa模型 RoBERTa for Chinese
+中文预训练RoBERTa模型 
 -------------------------------------------------
 
-24层base版(roberta_l24_zh_base）下载地址：TODO
+<a href='https://storage.googleapis.com/roberta_zh/roberta_model/roeberta_zh_L-24_H-768_A-12.zip'>24层base版(roberta_l24_zh_base）下载</a>
 
 base版训练数据：10G文本，包含新闻、社区问答、百科数据等。
 
-发布计划：
+发布计划 Release Plan：
 -------------------------------------------------
 1、24层RoBERTa模型(roberta_l24_zh)，使用30G文件训练，        9月8日
 
@@ -15,13 +15,13 @@ base版训练数据：10G文本，包含新闻、社区问答、百科数据等�
 
 3、6层RoBERTa模型(roberta_l6_zh)， 使用30G文件训练，         9月8日
 
-4、PyTorch版本的模型(roberta_l6_zh_pytorch)                9月8日
+4、PyTorch版本的模型(roberta_l6_zh_pytorch)                 9月8日
 
-5、30G中文语料，预训练格式，可直接训练(bert,xlent,gpt2)       9月8日
+5、30G中文语料，预训练格式，可直接训练(bert,xlent,gpt2)        9月8日
 
-6、测试集测试和效果对比                                     9月14日
+6、测试集测试和效果对比                                      9月14日
 
-RoBERTa中文版
+RoBERTa中文版 Chinese Version
 -------------------------------------------------
 本项目所指的中文预训练RoBERTa模型只指按照RoBERTa论文主要精神训练的模型。包括：
 
@@ -37,9 +37,9 @@ RoBERTa中文版
 
 5、调整优化器参数。
 
-除以上外，本项目中文版，使用了全词mask(whole word mask)。在全词Mask中，如果一个完整的词的部分WordPiece子词被mask，
+除以上外，本项目中文版，使用了全词mask(whole word mask)。在全词Mask中，如果一个完整的词的部分WordPiece子词被mask，则同属该词的其他部分也会被mask，即全词Mask。
 
-则同属该词的其他部分也会被mask，即全词Mask。
+dynamic mask在本项目中没有实现
 
 | 说明 | 样例 |
 | :------- | :--------- |
@@ -48,7 +48,37 @@ RoBERTa中文版
 | 原始Mask输入 | 使 用 语 言 [MASK] 型 来 [MASK] 测 下 一 个 词 的 pro [MASK] ##lity 。 |
 | 全词Mask输入 | 使 用 语 言 [MASK] [MASK] 来 [MASK] [MASK] 下 一 个 词 的 [MASK] [MASK] [MASK] 。 |
 
+效果测试与对比 Performance 
+-------------------------------------------------
+
+### 自然语言推断：XNLI
+
+| 模型 | 开发集 | 测试集 |
+| :------- | :---------: | :---------: |
+| BERT | 77.8 (77.4) | 77.8 (77.5) | 
+| ERNIE | **79.7 (79.4)** | 78.6 (78.2) | 
+| **BERT-wwm** | 79.0 (78.4) | 78.2 (78.0) | 
+| **BERT-wwm-ext** | 79.4 (78.6) | **78.7 (78.3)** |
+| **RoBERTa** | ? | ? |
+
+###  Sentence Pair Matching (SPM): LCQMC
+
+| 模型 | 开发集 | 测试集 |
+| :------- | :---------: | :---------: |
+| BERT | ? | ? | 
+| ERNIE | ? | ? | 
+| **BERT-wwm** |? | ? | 
+| **BERT-wwm-ext** | ? |?  |
+| **RoBERTa** | ? | ? |
+
+? 处地方，将会很快更新到具体的值
 
 
 -------------------------------------------------
-本项目受到 TensorFlow Research Cloud (TFRC) 资助
+本项目受到 TensorFlow Research Cloud (TFRC) 资助 This project is supp
+
+Reference
+-------------------------------------------------
+1、<a href="https://arxiv.org/pdf/1907.11692.pdf">RoBERTa: A Robustly Optimized BERT Pretraining Approach</a>
+
+2、<a href="https://arxiv.org/pdf/1906.08101.pdf">Pre-Training with Whole Word Masking for Chinese BERT</a>
