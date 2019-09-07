@@ -32,33 +32,6 @@ RoBERTa, produces state-of-the-art results on the widely used NLP benchmark, Gen
 
 6、测试集测试和效果对比                                      9月14日
 
-RoBERTa中文版 Chinese Version
--------------------------------------------------
-本项目所指的中文预训练RoBERTa模型只指按照RoBERTa论文主要精神训练的模型。包括：
-
-1、数据生成方式和任务改进：取消下一个句子预测，并且数据连续从一个文档中获得(见：Model Input Format and Next Sentence Prediction，DOC-SENTENCES)
-
-2、更大更多样性的数据：使用30G中文训练，包含3亿个句子，100亿个字(即token）。由新闻、社区讨论、多个百科，包罗万象，覆盖数十万个主题，
-
-所以数据具有多样性（为了更有多样性，可以可以加入网络书籍、小说、故事类文学、微博等）。
-
-3、训练更久：总共训练了近20万，总共见过近16亿个训练数据(instance)； 在Cloud TPU v3-256 上训练了24小时，相当于在TPU v3-8(128G显存)上需要训练一个月。
-
-4、更大批次：使用了超大（8k）的批次batch size。
-
-5、调整优化器参数。
-
-除以上外，本项目中文版，使用了全词mask(whole word mask)。在全词Mask中，如果一个完整的词的部分WordPiece子词被mask，则同属该词的其他部分也会被mask，即全词Mask。
-
-dynamic mask在本项目中没有实现
-
-| 说明 | 样例 |
-| :------- | :--------- |
-| 原始文本 | 使用语言模型来预测下一个词的probability。 |
-| 分词文本 | 使用 语言 模型 来 预测 下 一个 词 的 probability 。 |
-| 原始Mask输入 | 使 用 语 言 [MASK] 型 来 [MASK] 测 下 一 个 词 的 pro [MASK] ##lity 。 |
-| 全词Mask输入 | 使 用 语 言 [MASK] [MASK] 来 [MASK] [MASK] 下 一 个 词 的 [MASK] [MASK] [MASK] 。 |
-
 效果测试与对比 Performance 
 -------------------------------------------------
 
@@ -85,6 +58,34 @@ RoBERTa_l24_zh，只跑了一次，目前还不是最佳成绩
 | RoBERTa_l24_zh | ? | ? |
 
 ? 处地方，将会很快更新到具体的值
+
+
+RoBERTa中文版 Chinese Version
+-------------------------------------------------
+本项目所指的中文预训练RoBERTa模型只指按照RoBERTa论文主要精神训练的模型。包括：
+
+1、数据生成方式和任务改进：取消下一个句子预测，并且数据连续从一个文档中获得(见：Model Input Format and Next Sentence Prediction，DOC-SENTENCES)
+
+2、更大更多样性的数据：使用30G中文训练，包含3亿个句子，100亿个字(即token）。由新闻、社区讨论、多个百科，包罗万象，覆盖数十万个主题，
+
+所以数据具有多样性（为了更有多样性，可以可以加入网络书籍、小说、故事类文学、微博等）。
+
+3、训练更久：总共训练了近20万，总共见过近16亿个训练数据(instance)； 在Cloud TPU v3-256 上训练了24小时，相当于在TPU v3-8(128G显存)上需要训练一个月。
+
+4、更大批次：使用了超大（8k）的批次batch size。
+
+5、调整优化器参数。
+
+除以上外，本项目中文版，使用了全词mask(whole word mask)。在全词Mask中，如果一个完整的词的部分WordPiece子词被mask，则同属该词的其他部分也会被mask，即全词Mask。
+
+dynamic mask在本项目中没有实现
+
+| 说明 | 样例 |
+| :------- | :--------- |
+| 原始文本 | 使用语言模型来预测下一个词的probability。 |
+| 分词文本 | 使用 语言 模型 来 预测 下 一个 词 的 probability 。 |
+| 原始Mask输入 | 使 用 语 言 [MASK] 型 来 [MASK] 测 下 一 个 词 的 pro [MASK] ##lity 。 |
+| 全词Mask输入 | 使 用 语 言 [MASK] [MASK] 来 [MASK] [MASK] 下 一 个 词 的 [MASK] [MASK] [MASK] 。 |
 
 模型加载（以分类任务为例）
 -------------------------------------------------
@@ -113,6 +114,11 @@ tensorFlow版本：
     注：YOUR_TASK_NAME需要自己在run_classifier.py中的添加一个processor,并加到processors中，用于指定做什么任务怎么加载训练和验证数据。
 
 PyTorch版本加载示例：TODO
+
+Learning Curve 学习曲线
+-------------------------------------------------
+![alt text](https://github.com/brightmart/roberta_zh/blob/master/resources/RoBERTa_zh_Large_Learning_Curve.png)
+
 
 If you have any question, you can raise an issue, or send me an email: brightmart@hotmail.com
 
