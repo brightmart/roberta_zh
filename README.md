@@ -117,7 +117,7 @@ PyTorch版本加载示例：TODO
 
 Learning Curve 学习曲线
 -------------------------------------------------
-![alt text](https://github.com/brightmart/roberta_zh/blob/master/resources/RoBERTa_zh_Large_Learning_Curve.png)
+<img src="https://github.com/brightmart/roberta_zh/blob/master/resources/RoBERTa_zh_Large_Learning_Curve.png"  width="60%" height="60%" />
 
 
 If you have any question, you can raise an issue, or send me an email: brightmart@hotmail.com
