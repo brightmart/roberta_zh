@@ -4,9 +4,9 @@ RoBERTa for Chinese
 -------------------------------------------------
 <a href='#'> RoBERTa 24层(RoBERTa-zh-Large)</a> tensorflow版本-Bert直接加载
 
-RoBERTa 24层版训练数据：30G原始文本，近3亿个句子，100个中文字(token)，产生了2.5亿个训练数据(instance)；包含新闻、社区问答、多个百科数据等。
+RoBERTa 24层版训练数据：30G原始文本，近3亿个句子，100亿个中文字(token)，产生了2.5亿个训练数据(instance)；覆盖新闻、社区问答、多个百科数据等。
 
-<a href='https://drive.google.com/file/d/1cg3tVKPyUEmiI88H3gasqYC4LV4X8dNm/view?usp=sharing'>24层base版(roberta_l24_zh_base下载</a> tensorflow版本-Bert直接加载
+<a href='https://drive.google.com/file/d/1cg3tVKPyUEmiI88H3gasqYC4LV4X8dNm/view?usp=sharing'>24层base版(roberta_l24_zh_base)下载</a> tensorflow版本-Bert直接加载
 
 24层base版训练数据：10G文本，包含新闻、社区问答、多个百科数据等。
 
@@ -59,6 +59,33 @@ dynamic mask在本项目中没有实现
 | 原始Mask输入 | 使 用 语 言 [MASK] 型 来 [MASK] 测 下 一 个 词 的 pro [MASK] ##lity 。 |
 | 全词Mask输入 | 使 用 语 言 [MASK] [MASK] 来 [MASK] [MASK] 下 一 个 词 的 [MASK] [MASK] [MASK] 。 |
 
+效果测试与对比 Performance 
+-------------------------------------------------
+
+### 自然语言推断：XNLI
+
+| 模型 | 开发集 | 测试集 |
+| :------- | :---------: | :---------: |
+| BERT | 77.8 (77.4) | 77.8 (77.5) | 
+| ERNIE | 79.7 (79.4) | 78.6 (78.2) | 
+| BERT-wwm | 79.0 (78.4) | 78.2 (78.0) | 
+| BERT-wwm-ext | 79.4 (78.6) | 78.7 (78.3) |
+| **RoBERTa-zh-Large** | **80.0** | **79.9** |
+
+RoBERTa_l24_zh，只跑了一次，目前还不是最佳成绩
+
+###  Sentence Pair Matching (SPM): LCQMC
+
+| 模型 | 开发集(Dev) | 测试集(Test) |
+| :------- | :---------: | :---------: |
+| BERT | 89.4(88.4) | 86.9(86.4) | 
+| ERNIE | 89.8 (89.6) | 87.2 (87.0) | 
+| BERT-wwm |89.4 (89.2) | 87.0 (86.8) | 
+| BERT-wwm-ext | ? |?  |
+| RoBERTa_l24_zh | ? | ? |
+
+? 处地方，将会很快更新到具体的值
+
 模型加载（以分类任务为例）
 -------------------------------------------------
 tensorFlow版本：
@@ -86,33 +113,6 @@ tensorFlow版本：
     注：YOUR_TASK_NAME需要自己在run_classifier.py中的添加一个processor,并加到processors中，用于指定做什么任务怎么加载训练和验证数据。
 
 PyTorch版本加载示例：TODO
-
-效果测试与对比 Performance 
--------------------------------------------------
-
-### 自然语言推断：XNLI
-
-| 模型 | 开发集 | 测试集 |
-| :------- | :---------: | :---------: |
-| BERT | 77.8 (77.4) | 77.8 (77.5) | 
-| ERNIE | 79.7 (79.4) | 78.6 (78.2) | 
-| BERT-wwm | 79.0 (78.4) | 78.2 (78.0) | 
-| BERT-wwm-ext | 79.4 (78.6) | 78.7 (78.3) |
-| **RoBERTa_l24_zh** | **80.0** | **79.9** |
-
-RoBERTa_l24_zh，只跑了一次，目前还不是最佳成绩
-
-###  Sentence Pair Matching (SPM): LCQMC
-
-| 模型 | 开发集(Dev) | 测试集(Test) |
-| :------- | :---------: | :---------: |
-| BERT | 89.4(88.4) | 86.9(86.4) | 
-| ERNIE | 89.8 (89.6) | 87.2 (87.0) | 
-| BERT-wwm |89.4 (89.2) | 87.0 (86.8) | 
-| BERT-wwm-ext | ? |?  |
-| RoBERTa_l24_zh | ? | ? |
-
-? 处地方，将会很快更新到具体的值
 
 If you have any question, you can raise an issue, or send me an email: brightmart@hotmail.com
 
