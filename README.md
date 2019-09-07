@@ -3,7 +3,7 @@ RoBERTa for Chinese
 中文预训练RoBERTa模型 
 -------------------------------------------------
 
-<a href='https://storage.googleapis.com/roberta_zh/roberta_model/roeberta_zh_L-24_H-768_A-12.zip'>24层base版(roberta_l24_zh_base）下载</a>tensorflow版本-Bert直接加载
+<a href='https://drive.google.com/file/d/1cg3tVKPyUEmiI88H3gasqYC4LV4X8dNm/view?usp=sharing'>24层base版(roberta_l24_zh_base下载</a> tensorflow版本-Bert直接加载
 
 24层base版训练数据：10G文本，包含新闻、社区问答、多个百科数据等。
 
@@ -109,6 +109,7 @@ PyTorch版本加载示例：TODO
 
 ? 处地方，将会很快更新到具体的值
 
+If you have any question, you can raise an issue, or send me an email: brightmart@hotmail.com
 
 -------------------------------------------------
 本项目受到 TensorFlow Research Cloud (TFRC) 资助 / Project supported with Cloud TPUs from Google's TensorFlow Research Cloud (TFRC)
