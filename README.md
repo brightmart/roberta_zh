@@ -43,9 +43,9 @@ RoBERTa, produces state-of-the-art results on the widely used NLP benchmark, Gen
 | ERNIE | 79.7 (79.4) | 78.6 (78.2) | 
 | BERT-wwm | 79.0 (78.4) | 78.2 (78.0) | 
 | BERT-wwm-ext | 79.4 (78.6) | 78.7 (78.3) |
-| **RoBERTa-zh-Large** | **80.0** | **79.9** |
+| **RoBERTa-zh-Large** | **80.2 (80.0)** | **79.9 (79.5)** |
 
-注：RoBERTa_l24_zh，只跑了一次，目前还不是最佳成绩
+注：RoBERTa_l24_zh，只跑了两次，Performance可能还会提升
 
 ###  Sentence Pair Matching (SPM): LCQMC
 
