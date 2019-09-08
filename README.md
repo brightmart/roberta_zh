@@ -9,7 +9,7 @@ RoBERTa是BERT的改进版，通过改进训练任务和数据生成方式、训
 中文预训练RoBERTa模型-下载
 -------------------------------------------------
 ###### ** 推荐 RoBERTa-zh-Large 通过验证**
-<a href='https://drive.google.com/open?id=1W3WgPJWGVKlU9wpUYsdZuurAIFKvrl_Y'> RoBERTa-zh-Large</a> TensorFlow版本，Bert 直接加载
+RoBERTa-zh-Large: <a href='https://drive.google.com/open?id=1W3WgPJWGVKlU9wpUYsdZuurAIFKvrl_Y'> Google Drive </a> 或 <a href="https://pan.baidu.com/s/1Rk_QWqd7-wBTwycr91bmug">百度网盘</a> ，TensorFlow版本，Bert 直接加载
 
 RoBERTa 24层版训练数据：30G原始文本，近3亿个句子，100亿个中文字(token)，产生了2.5亿个训练数据(instance)；
 
