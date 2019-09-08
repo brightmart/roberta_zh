@@ -64,7 +64,7 @@ What is RoBERTa:
 | ERNIE | **89.8** (89.6) | **87.2** (87.0) | 
 | BERT-wwm |89.4 (89.2) | 87.0 (86.8) | 
 | BERT-wwm-ext | ? |?  |
-| RoBERTa_l24_zh | 89.6 | **87.2** |
+| **RoBERTa-zh-Large** | 89.6 | **87.2** |
 
 注：RoBERTa_l24_zh，只跑了一次，目前还不是最佳成绩。保存训练轮次和论文一致：
 
@@ -103,16 +103,18 @@ RoBERTa中文版 Chinese Version
 模型加载（以Sentence Pair Matching即句子对任务，LCQMC为例）
 -------------------------------------------------
 
-下载<a href="https://drive.google.com/open?id=1W3WgPJWGVKlU9wpUYsdZuurAIFKvrl_Y">LCQMC</a>数据集，包含训练、验证和测试集，训练集包含24万口语化描述的中文句子对，标签为1或0。1为句子语义相似，0为语义不相似。
+下载<a href="https://drive.google.com/open?id=1HXYMqsXjmA5uIfu_SFqP7r_vZZG-m_H0">LCQMC</a>数据集，包含训练、验证和测试集，训练集包含24万口语化描述的中文句子对，标签为1或0。1为句子语义相似，0为语义不相似。
 
 tensorFlow版本：
 
     1、复制本项目： git clone https://github.com/brightmart/roberta_zh
     
-    2、进到项目(roberta_zh)中。假设你将RoBERTa预训练模型下载，并解压到该项目的roberta_zh_large目录，即roberta_zh/roberta_zh_large
+    2、进到项目(roberta_zh)中。
+    
+      假设你将RoBERTa预训练模型下载并解压到该改项目的roberta_zh_large目录，即roberta_zh/roberta_zh_large
     
     运行命令:
-    
+  
     export BERT_BASE_DIR=./roberta_zh_large
     export MY_DATA_DIR=./data/lcqmc
     python run_classifier.py \
