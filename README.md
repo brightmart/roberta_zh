@@ -6,12 +6,15 @@ RoBERTa是BERT的改进版，通过改进训练任务和数据生成方式、训
 
 本项目是用TensorFlow实现了在大规模中文上RoBERTa的预训练，也会提供PyTorch的预训练模型和加载方式。
 
-** 2019-09-08 更新： 添加国内下载地址、与bert-wwm、bert-wwm-ext、xlnet模型效果初步对比 **
+** 2019-09-08 更新： 添加国内下载地址、PyTorch版本、与多个模型bert-wwm、bert-wwm-ext、xlnet模型效果初步对比 **
 
 中文预训练RoBERTa模型-下载
 -------------------------------------------------
 ###### ** 推荐 RoBERTa-zh-Large 通过验证**
 RoBERTa-zh-Large: <a href='https://drive.google.com/open?id=1W3WgPJWGVKlU9wpUYsdZuurAIFKvrl_Y'> Google Drive </a> 或 <a href="https://pan.baidu.com/s/1Rk_QWqd7-wBTwycr91bmug">百度网盘</a> ，TensorFlow版本，Bert 直接加载
+
+RoBERTa-zh-Large: <a href='https://drive.google.com/open?id=1yK_P8VhWZtdgzaG0gJ3zUGOKWODitKXZ'> Google Drive </a> 或 <a href="https://pan.baidu.com/s/1MRDuVqUROMdSKr6HD9x1mw">百度网盘</a> ，PyTorch版本，Bert的PyTorch版直接加载
+
 
 RoBERTa 24层版训练数据：30G原始文本，近3亿个句子，100亿个中文字(token)，产生了2.5亿个训练数据(instance)；
 
