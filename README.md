@@ -2,11 +2,11 @@ RoBERTa for Chinese
 
 中文预训练RoBERTa模型 
 -------------------------------------------------
-<a href='#'> RoBERTa 24层(RoBERTa-zh-Large)</a> tensorflow版本-Bert直接加载
+<a href='https://drive.google.com/open?id=1cg3tVKPyUEmiI88H3gasqYC4LV4X8dNm'> RoBERTa 24层(RoBERTa-zh-Large)</a> TensorFlow版本-Bert直接加载
 
 RoBERTa 24层版训练数据：30G原始文本，近3亿个句子，100亿个中文字(token)，产生了2.5亿个训练数据(instance)；覆盖新闻、社区问答、多个百科数据等。
 
-<a href='https://drive.google.com/file/d/1cg3tVKPyUEmiI88H3gasqYC4LV4X8dNm/view?usp=sharing'>24层base版(roberta_l24_zh_base)下载</a> tensorflow版本-Bert直接加载
+<a href='https://drive.google.com/file/d/1cg3tVKPyUEmiI88H3gasqYC4LV4X8dNm/view?usp=sharing'>24层base版(roberta_l24_zh_base)</a> TensorFlow版本-Bert直接加载
 
 24层base版训练数据：10G文本，包含新闻、社区问答、多个百科数据等。
 
