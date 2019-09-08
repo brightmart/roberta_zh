@@ -74,12 +74,12 @@ What is RoBERTa:
 | 模型 | 开发集(Dev) | 测试集(Test) |
 | :------- | :---------: | :---------: |
 | BERT | 89.4(88.4) | 86.9(86.4) | 
-| ERNIE | **89.8** (89.6) | **87.2** (87.0) | 
+| ERNIE | 89.8 (89.6) | **87.2** (87.0) | 
 | BERT-wwm |89.4 (89.2) | 87.0 (86.8) | 
 | BERT-wwm-ext | ? |?  |
-| **RoBERTa-zh-Large** | 89.6 | **87.2** |
+| **RoBERTa-zh-Large** | **89.9**(89.6) | **87.2**(86.7) |
 
-注：RoBERTa_l24_zh，只跑了一次，目前还不是最佳成绩。保存训练轮次和论文一致：
+注：RoBERTa_l24_zh，只跑了两次，Performance可能还会提升。保持训练轮次和论文一致：
 
 ? 处地方，将会很快更新到具体的值
 
@@ -159,8 +159,9 @@ If you have any question, you can raise an issue, or send me an email: brightmar
 -------------------------------------------------
 <a href="https://github.com/skyhawk1990"> skyhawk1990</a>
 
--------------------------------------------------
-本项目受到 TensorFlow Research Cloud (TFRC) 资助 / Project supported with Cloud TPUs from Google's TensorFlow Research Cloud (TFRC)
+
+##### Research supported with Cloud TPUs from Google's TensorFlow Research Cloud (TFRC)
+
  
 Reference
 -------------------------------------------------
