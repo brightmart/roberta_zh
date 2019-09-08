@@ -91,7 +91,7 @@ RoBERTa中文版 Chinese Version
 
 本项目中并没有直接实现dynamic mask。通过复制一个训练样本得到多份数据，每份数据使用不同mask，并加大复制的分数，可间接得到dynamic mask效果。
 
-#####中文全词遮蔽 Whole Word Mask
+##### 中文全词遮蔽 Whole Word Mask
 
 | 说明 | 样例 |
 | :------- | :--------- |
@@ -100,18 +100,23 @@ RoBERTa中文版 Chinese Version
 | 原始Mask输入 | 使 用 语 言 [MASK] 型 来 [MASK] 测 下 一 个 词 的 pro [MASK] ##lity 。 |
 | 全词Mask输入 | 使 用 语 言 [MASK] [MASK] 来 [MASK] [MASK] 下 一 个 词 的 [MASK] [MASK] [MASK] 。 |
 
-模型加载（以分类任务为例）
+模型加载（以Sentence Pair Matching即句子对任务，LCQMC为例）
 -------------------------------------------------
+
+下载<a href="https://drive.google.com/open?id=1W3WgPJWGVKlU9wpUYsdZuurAIFKvrl_Y">LCQMC</a>数据集，包含训练、验证和测试集，训练集包含24万口语化描述的中文句子对，标签为1或0。1为句子语义相似，0为语义不相似。
+
 tensorFlow版本：
 
-    1、clone <a href="https://github.com/google-research/bert">bert项目</a>
+    1、复制本项目： git clone https://github.com/brightmart/roberta_zh
     
-    2、运行命令:
+    2、进到项目(roberta_zh)中。假设你将RoBERTa预训练模型下载，并解压到该项目的roberta_zh_large目录，即roberta_zh/roberta_zh_large
     
-    export BERT_BASE_DIR=/path/to/roberta/roeberta_zh_L-24_H-1024_A-16
-    export MY_DATA_DIR=/path/to/your_dataset
+    运行命令:
+    
+    export BERT_BASE_DIR=./roberta_zh_large
+    export MY_DATA_DIR=./data/lcqmc
     python run_classifier.py \
-      --task_name=YOUR_TASK_NAME \
+      --task_name=lcqmc_pair \
       --do_train=true \
       --do_eval=true \
       --data_dir=$MY_DATA_DIR \
@@ -119,23 +124,26 @@ tensorFlow版本：
       --bert_config_file=$BERT_BASE_DIR/bert_config_large.json \
       --init_checkpoint=$BERT_BASE_DIR/roberta_zh_large_model.ckpt \
       --max_seq_length=128 \
-      --train_batch_size=32 \
+      --train_batch_size=64 \
       --learning_rate=2e-5 \
-      --num_train_epochs=4 \
-      --output_dir=/tmp/fine_tuning_output/
+      --num_train_epochs=3 \
+      --output_dir=./checkpoint_lcqmc
     
-    注：YOUR_TASK_NAME需要自己在run_classifier.py中的添加一个processor,并加到processors中，用于指定做什么任务怎么加载训练和验证数据。
+    注：task_name为lcqmc_pair。这里已经在run_classifier.py中的添加一个processor,并加到processors中，用于指定做lcqmc任务，并加载训练和验证数据。
 
 PyTorch加载方式，先参考<a href="https://github.com/brightmart/roberta_zh/issues/9">issue 9</a>；将很快提供更具体方式。
 
 Learning Curve 学习曲线
 -------------------------------------------------
-<img src="https://github.com/brightmart/roberta_zh/blob/master/resources/RoBERTa_zh_Large_Learning_Curve.png"  width="60%" height="60%" />
+<img src="https://github.com/brightmart/roberta_zh/blob/master/resources/RoBERTa_zh_Large_Learning_Curve.png"  width="70%" height="60%" />
 
 
 If you have any question, you can raise an issue, or send me an email: brightmart@hotmail.com
 
-项目贡献者，还包括：<a href="https://github.com/skyhawk1990"> skyhawk1990</a>
+
+项目贡献者，还包括：
+-------------------------------------------------
+<a href="https://github.com/skyhawk1990"> skyhawk1990</a>
 
 -------------------------------------------------
 本项目受到 TensorFlow Research Cloud (TFRC) 资助 / Project supported with Cloud TPUs from Google's TensorFlow Research Cloud (TFRC)
@@ -147,3 +155,5 @@ Reference
 2、<a href="https://arxiv.org/pdf/1906.08101.pdf">Pre-Training with Whole Word Masking for Chinese BERT</a>
 
 3、<a href="https://arxiv.org/pdf/1810.04805.pdf">BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding</a>
+
+4、<a href="https://aclweb.org/anthology/C18-1166">LCQMC: A Large-scale Chinese Question Matching Corpus</a>
