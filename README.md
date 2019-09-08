@@ -45,17 +45,19 @@ RoBERTa, produces state-of-the-art results on the widely used NLP benchmark, Gen
 | BERT-wwm-ext | 79.4 (78.6) | 78.7 (78.3) |
 | **RoBERTa-zh-Large** | **80.0** | **79.9** |
 
-RoBERTa_l24_zh，只跑了一次，目前还不是最佳成绩
+注：RoBERTa_l24_zh，只跑了一次，目前还不是最佳成绩
 
 ###  Sentence Pair Matching (SPM): LCQMC
 
 | 模型 | 开发集(Dev) | 测试集(Test) |
 | :------- | :---------: | :---------: |
 | BERT | 89.4(88.4) | 86.9(86.4) | 
-| ERNIE | 89.8 (89.6) | 87.2 (87.0) | 
+| ERNIE | **89.8** (89.6) | **87.2** (87.0) | 
 | BERT-wwm |89.4 (89.2) | 87.0 (86.8) | 
 | BERT-wwm-ext | ? |?  |
-| RoBERTa_l24_zh | ? | ? |
+| RoBERTa_l24_zh | 89.6 | **87.2** |
+
+注：RoBERTa_l24_zh，只跑了一次，目前还不是最佳成绩。保存训练轮次和论文一致：
 
 ? 处地方，将会很快更新到具体的值
 
