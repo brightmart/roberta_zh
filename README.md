@@ -6,6 +6,8 @@ RoBERTa是BERT的改进版，通过改进训练任务和数据生成方式、训
 
 本项目是用TensorFlow实现了在大规模中文上RoBERTa的预训练，也会提供PyTorch的预训练模型和加载方式。
 
+** 2019-09-08 更新： 添加国内下载地址、与bert-wwm、bert-wwm-ext、xlnet模型效果初步对比 **
+
 中文预训练RoBERTa模型-下载
 -------------------------------------------------
 ###### ** 推荐 RoBERTa-zh-Large 通过验证**
@@ -43,6 +45,17 @@ What is RoBERTa:
 
 效果测试与对比 Performance 
 -------------------------------------------------
+### 互联网新闻情感分析：CCF-Sentiment-Analysis
+
+| 模型 | 线上F1 |
+| :------- | :---------: |
+| BERT | 80.3 |
+| Bert-wwm-ext | 80.5 | 
+| XLNet | 79.6 | 
+| Roberta-mid | 80.5 |
+| Roberta-large (max_seq_length=512, split_num=1) | 81.25 |
+
+注：数据来源于<a href="https://github.com/guoday/CCF-BDCI-Sentiment-Analysis-Baseline/blob/master/README.md">guoday的开源项目</a>；数据集和任务介绍见：<a href="https://www.datafountain.cn/competitions/350/ranking">CCF互联网新闻情感分析</a>
 
 ### 自然语言推断：XNLI
 
@@ -56,7 +69,7 @@ What is RoBERTa:
 
 注：RoBERTa_l24_zh，只跑了两次，Performance可能还会提升
 
-###  Sentence Pair Matching (SPM): LCQMC
+###  问题匹配语任务：LCQMC(Sentence Pair Matching)
 
 | 模型 | 开发集(Dev) | 测试集(Test) |
 | :------- | :---------: | :---------: |
@@ -69,7 +82,6 @@ What is RoBERTa:
 注：RoBERTa_l24_zh，只跑了一次，目前还不是最佳成绩。保存训练轮次和论文一致：
 
 ? 处地方，将会很快更新到具体的值
-
 
 RoBERTa中文版 Chinese Version
 -------------------------------------------------
