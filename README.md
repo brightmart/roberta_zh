@@ -68,9 +68,10 @@ What is RoBERTa:
 | ERNIE | 79.7 (79.4) | 78.6 (78.2) | 
 | BERT-wwm | 79.0 (78.4) | 78.2 (78.0) | 
 | BERT-wwm-ext | 79.4 (78.6) | 78.7 (78.3) |
+| XLNet | 79.2  | 78.7 |
 | **RoBERTa-zh-Large** | **80.2 (80.0)** | **79.9 (79.5)** |
 
-注：RoBERTa_l24_zh，只跑了两次，Performance可能还会提升
+注：RoBERTa_l24_zh，只跑了两次，Performance可能还会提升; BERT-wwm-ext来自于<a href="https://github.com/ymcui/Chinese-BERT-wwm">这里</a>；XLNet来自于<a href="https://github.com/ymcui/Chinese-PreTrained-XLNet">这里</a>
 
 ###  问题匹配语任务：LCQMC(Sentence Pair Matching)
 
@@ -79,7 +80,7 @@ What is RoBERTa:
 | BERT | 89.4(88.4) | 86.9(86.4) | 
 | ERNIE | 89.8 (89.6) | **87.2** (87.0) | 
 | BERT-wwm |89.4 (89.2) | 87.0 (86.8) | 
-| BERT-wwm-ext | ? |?  |
+| BERT-wwm-ext | - |-  |
 | **RoBERTa-zh-Large** | **89.9**(89.6) | **87.2**(86.7) |
 
 注：RoBERTa_l24_zh，只跑了两次，Performance可能还会提升。保持训练轮次和论文一致：

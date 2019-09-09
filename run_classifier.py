@@ -25,7 +25,7 @@ import modeling
 import optimization_finetuning as optimization
 import tokenization
 import tensorflow as tf
-from loss import bi_tempered_logistic_loss
+# from loss import bi_tempered_logistic_loss
 
 flags = tf.flags
 
