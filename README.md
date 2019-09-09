@@ -69,9 +69,13 @@ What is RoBERTa:
 | BERT-wwm | 79.0 (78.4) | 78.2 (78.0) | 
 | BERT-wwm-ext | 79.4 (78.6) | 78.7 (78.3) |
 | XLNet | 79.2  | 78.7 |
+| RoBERTa-zh-base | - |-  |
+
 | **RoBERTa-zh-Large** | **80.2 (80.0)** | **79.9 (79.5)** |
 
-注：RoBERTa_l24_zh，只跑了两次，Performance可能还会提升; BERT-wwm-ext来自于<a href="https://github.com/ymcui/Chinese-BERT-wwm">这里</a>；XLNet来自于<a href="https://github.com/ymcui/Chinese-PreTrained-XLNet">这里</a>
+注：RoBERTa_l24_zh，只跑了两次，Performance可能还会提升; 
+
+BERT-wwm-ext来自于<a href="https://github.com/ymcui/Chinese-BERT-wwm">这里</a>；XLNet来自于<a href="https://github.com/ymcui/Chinese-PreTrained-XLNet">这里</a>; RoBERTa-zh-base，指12层RoBERTa中文模型
 
 ###  问题匹配语任务：LCQMC(Sentence Pair Matching)
 
@@ -81,6 +85,7 @@ What is RoBERTa:
 | ERNIE | 89.8 (89.6) | **87.2** (87.0) | 
 | BERT-wwm |89.4 (89.2) | 87.0 (86.8) | 
 | BERT-wwm-ext | - |-  |
+| RoBERTa-zh-base | 88.7 | 87.0  |
 | **RoBERTa-zh-Large** | **89.9**(89.6) | **87.2**(86.7) |
 
 注：RoBERTa_l24_zh，只跑了两次，Performance可能还会提升。保持训练轮次和论文一致：
@@ -156,6 +161,8 @@ Learning Curve 学习曲线
 <img src="https://github.com/brightmart/roberta_zh/blob/master/resources/RoBERTa_zh_Large_Learning_Curve.png"  width="70%" height="60%" />
 
 
+##### 技术交流与问题讨论QQ群: 836811304
+
 If you have any question, you can raise an issue, or send me an email: brightmart@hotmail.com
 
 
@@ -166,7 +173,9 @@ If you have any question, you can raise an issue, or send me an email: brightmar
 
 ##### Research supported with Cloud TPUs from Google's TensorFlow Research Cloud (TFRC)
 
- 
+
+
+
 Reference
 -------------------------------------------------
 1、<a href="https://arxiv.org/pdf/1907.11692.pdf">RoBERTa: A Robustly Optimized BERT Pretraining Approach</a>
