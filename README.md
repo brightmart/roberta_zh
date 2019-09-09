@@ -15,14 +15,19 @@ RoBERTa-zh-Large: <a href='https://drive.google.com/open?id=1W3WgPJWGVKlU9wpUYsd
 
 RoBERTa-zh-Large: <a href='https://drive.google.com/open?id=1yK_P8VhWZtdgzaG0gJ3zUGOKWODitKXZ'> Google Drive </a> 或 <a href="https://pan.baidu.com/s/1MRDuVqUROMdSKr6HD9x1mw">百度网盘</a> ，PyTorch版本，Bert的PyTorch版直接加载
 
-
-RoBERTa 24层版训练数据：30G原始文本，近3亿个句子，100亿个中文字(token)，产生了2.5亿个训练数据(instance)；
+RoBERTa 24/12层版训练数据：30G原始文本，近3亿个句子，100亿个中文字(token)，产生了2.5亿个训练数据(instance)；
 
 覆盖新闻、社区问答、多个百科数据等。
+
+<a href=''>Roberta_l12_zh_base</a> TensorFlow版本，Bert 直接加载
+
+---------------------------------------------------------------
 
 <a href='https://drive.google.com/file/d/1cg3tVKPyUEmiI88H3gasqYC4LV4X8dNm/view?usp=sharing'>Roberta_l24_zh_base</a> TensorFlow版本，Bert 直接加载
 
 24层base版训练数据：10G文本，包含新闻、社区问答、多个百科数据等。
+
+
 
 What is RoBERTa:
 -------------------------------------------------
@@ -69,8 +74,7 @@ What is RoBERTa:
 | BERT-wwm | 79.0 (78.4) | 78.2 (78.0) | 
 | BERT-wwm-ext | 79.4 (78.6) | 78.7 (78.3) |
 | XLNet | 79.2  | 78.7 |
-| RoBERTa-zh-base | - |-  |
-
+| RoBERTa-zh-base | 79.8 |78.8  |
 | **RoBERTa-zh-Large** | **80.2 (80.0)** | **79.9 (79.5)** |
 
 注：RoBERTa_l24_zh，只跑了两次，Performance可能还会提升; 
@@ -87,6 +91,7 @@ BERT-wwm-ext来自于<a href="https://github.com/ymcui/Chinese-BERT-wwm">这里<
 | BERT-wwm-ext | - |-  |
 | RoBERTa-zh-base | 88.7 | 87.0  |
 | **RoBERTa-zh-Large** | **89.9**(89.6) | **87.2**(86.7) |
+| RoBERTa-zh-Large(20w_steps) | 89.7| 87.0 |
 
 注：RoBERTa_l24_zh，只跑了两次，Performance可能还会提升。保持训练轮次和论文一致：
 
@@ -161,7 +166,7 @@ Learning Curve 学习曲线
 <img src="https://github.com/brightmart/roberta_zh/blob/master/resources/RoBERTa_zh_Large_Learning_Curve.png"  width="70%" height="60%" />
 
 
-##### 技术交流与问题讨论QQ群: 836811304
+#### 技术交流与问题讨论QQ群: 836811304
 
 If you have any question, you can raise an issue, or send me an email: brightmart@hotmail.com
 
