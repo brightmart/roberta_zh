@@ -19,7 +19,7 @@ RoBERTa 24/12层版训练数据：30G原始文本，近3亿个句子，100亿个
 
 覆盖新闻、社区问答、多个百科数据等。
 
-<a href=''>Roberta_l12_zh_base</a> TensorFlow版本，Bert 直接加载
+<a href='https://drive.google.com/open?id=1ykENKV7dIFAqRRQbZIh0mSb7Vjc2MeFA'>RoBERTa_zh_L12</a> TensorFlow版本，Bert 直接加载 或 <a href="https://drive.google.com/open?id=1H6f4tYlGXgug1DdhYzQVBuwIGAkAflwB">PyTorch版本，Bert的PyTorch版直接加载</a>
 
 ---------------------------------------------------------------
 
