@@ -6,7 +6,7 @@ RoBERTa是BERT的改进版，通过改进训练任务和数据生成方式、训
 
 本项目是用TensorFlow实现了在大规模中文上RoBERTa的预训练，也会提供PyTorch的预训练模型和加载方式。
 
-** 2019-09-08 更新： 添加国内下载地址、PyTorch版本、与多个模型bert-wwm、bert-wwm-ext、xlnet模型效果初步对比 **
+*** 2019-09-08 更新： 添加国内下载地址、PyTorch版本、与多个模型bert-wwm、xlnet等模型效果初步对比 ***
 
 中文预训练RoBERTa模型-下载
 -------------------------------------------------
@@ -17,7 +17,7 @@ RoBERTa-zh-Large: <a href='https://drive.google.com/open?id=1yK_P8VhWZtdgzaG0gJ3
 
 RoBERTa 24/12层版训练数据：30G原始文本，近3亿个句子，100亿个中文字(token)，产生了2.5亿个训练数据(instance)；
 
-覆盖新闻、社区问答、多个百科数据等。
+覆盖新闻、社区问答、多个百科数据等；与<a href="https://github.com/brightmart/xlnet_zh">XLNet_zh_Large</a>项目使用相同的数据。
 
 <a href='https://drive.google.com/open?id=1ykENKV7dIFAqRRQbZIh0mSb7Vjc2MeFA'>RoBERTa_zh_L12</a> TensorFlow版本，Bert 直接加载 或 <a href="https://drive.google.com/open?id=1H6f4tYlGXgug1DdhYzQVBuwIGAkAflwB">PyTorch版本，Bert的PyTorch版直接加载</a>
 
@@ -47,7 +47,7 @@ What is RoBERTa:
 
 4、PyTorch版本的模型(roberta_l6_zh_pytorch)                9月8日
 
-5、30G中文语料，预训练格式，可直接训练(bert,xlent,gpt2)       9月14日或待定
+5、30G中文语料，预训练格式，可直接训练(bert,xlent,gpt2)       待定
 
 6、测试集测试和效果对比                                     9月14日
 
@@ -168,7 +168,11 @@ Learning Curve 学习曲线
 
 #### 技术交流与问题讨论QQ群: 836811304
 
-If you have any question, you can raise an issue, or send me an email: brightmart@hotmail.com
+If you have any question, you can raise an issue, or send me an email: brightmart@hotmail.com;
+
+You can also send pull request to report you performance on your task or add methods on how to load models for PyTorch and so on.
+
+请报告在你的任务上的准确率情况及与其他模型的比较。
 
 
 项目贡献者，还包括：
