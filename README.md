@@ -17,7 +17,9 @@ RoBERTa-zh-Large: <a href='https://drive.google.com/open?id=1yK_P8VhWZtdgzaG0gJ3
 
 RoBERTa 24/12层版训练数据：30G原始文本，近3亿个句子，100亿个中文字(token)，产生了2.5亿个训练数据(instance)；
 
-覆盖新闻、社区问答、多个百科数据等；与<a href="https://github.com/brightmart/xlnet_zh">XLNet_zh_Large</a>项目使用相同的数据。
+覆盖新闻、社区问答、多个百科数据等；
+
+本项目与中文预训练24层XLNet模型 <a href="https://github.com/brightmart/xlnet_zh">XLNet_zh</a>项目，使用相同的训练数据。
 
 <a href='https://drive.google.com/open?id=1ykENKV7dIFAqRRQbZIh0mSb7Vjc2MeFA'>RoBERTa_zh_L12</a> TensorFlow版本，Bert 直接加载 或 <a href="https://drive.google.com/open?id=1H6f4tYlGXgug1DdhYzQVBuwIGAkAflwB">PyTorch版本，Bert的PyTorch版直接加载</a>
 
