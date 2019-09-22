@@ -121,7 +121,8 @@ RoBERTa中文版 Chinese Version
 
 本项目中并没有直接实现dynamic mask。通过复制一个训练样本得到多份数据，每份数据使用不同mask，并加大复制的分数，可间接得到dynamic mask效果。
 
-#####使用说明
+##### 使用说明 Instructions for Use
+
 当前本项目是使用sequence length为256训练的，所以可能对长度在这个范围内的效果不错；如果你的任务的输入比较长（如序列长度为512），或许效果有影响。
 
 有同学结合滑动窗口的形式，将序列做拆分，还是得到了比较好的效果，见<a href="https://github.com/brightmart/roberta_zh/issues/16">#issue-16</a>
@@ -170,21 +171,25 @@ tensorFlow版本：
 
 PyTorch加载方式，先参考<a href="https://github.com/brightmart/roberta_zh/issues/9">issue 9</a>；将很快提供更具体方式。
 
-预训练
+预训练 Pre-training
 -------------------------------------------------
-#### 1) 预训练的数据来源
-你可以使用你的任务相关领域的数据来训练，也可以从通用的语料中筛选出一部分与你领域相关的数据做训练。通用语料数据见<a href="https://github.com/brightmart/nlp_chinese_corpus">nlp_chinese_corpus</a>:包含多个拥有数千万句子的语料的数据集。
+#### 1) 预训练的数据 data of pre-training
+你可以使用你的任务相关领域的数据来训练，也可以从通用的语料中筛选出一部分与你领域相关的数据做训练。
 
-#### 2) 生成预训练数据
+通用语料数据见<a href="https://github.com/brightmart/nlp_chinese_corpus">nlp_chinese_corpus</a>:包含多个拥有数千万句子的语料的数据集。
+
+#### 2) 生成预训练数据 generate data for pre-training 
 包括使用参照DOC-SENTENCES的形式，连续从一个文档中获得数据；以及做全词遮蔽(whole word mask)
 
-shell脚本，批量将多个txt文本转化为tfrecord的数据。如将第1到10个txt转化为tfrecords文件：
+shell脚本：批量将多个txt文本转化为tfrecord的数据。
+
+    如将第1到10个txt转化为tfrecords文件：
 
     nohup bash create_pretrain_data.sh 1 10 & 
                                                                                  
-    注：在我们的实验中使用15%的比例做全词遮蔽，任务比较困难、学习难度大、收敛困难，所以我们用了10%的比例；
+    注：在我们的实验中使用15%的比例做全词遮蔽，模型学习难度大、收敛困难，所以我们用了10%的比例；
 
-#### 3）运行预训练命令
+#### 3）运行预训练命令 pre-training
 去掉next sentence prediction任务
     
     export BERT_BASE_DIR=<path_of_robert_or_bert_model>
@@ -208,6 +213,8 @@ Learning Curve 学习曲线
 If you have any question, you can raise an issue, or send me an email: brightmart@hotmail.com;
 
 You can also send pull request to report you performance on your task or add methods on how to load models for PyTorch and so on.
+
+If you have ideas for generate best performance pre-training Chinese model, please also let me know.
 
 请报告在你的任务上的准确率情况及与其他模型的比较。
 
