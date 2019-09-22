@@ -121,6 +121,11 @@ RoBERTa中文版 Chinese Version
 
 本项目中并没有直接实现dynamic mask。通过复制一个训练样本得到多份数据，每份数据使用不同mask，并加大复制的分数，可间接得到dynamic mask效果。
 
+#####使用说明
+当前本项目是使用sequence length为256训练的，所以可能对长度在这个范围内的效果不错；如果你的任务的输入比较长（如序列长度为512），或许效果有影响。
+
+有同学结合滑动窗口的形式，将序列做拆分，还是得到了比较好的效果，见<a href="https://github.com/brightmart/roberta_zh/issues/16">#issue-16</a>
+
 ##### 中文全词遮蔽 Whole Word Mask
 
 | 说明 | 样例 |
@@ -164,6 +169,34 @@ tensorFlow版本：
     注：task_name为lcqmc_pair。这里已经在run_classifier.py中的添加一个processor,并加到processors中，用于指定做lcqmc任务，并加载训练和验证数据。
 
 PyTorch加载方式，先参考<a href="https://github.com/brightmart/roberta_zh/issues/9">issue 9</a>；将很快提供更具体方式。
+
+预训练
+-------------------------------------------------
+#### 1) 预训练的数据来源
+你可以使用你的任务相关领域的数据来训练，也可以从通用的语料中筛选出一部分与你领域相关的数据做训练。通用语料数据见<a href="https://github.com/brightmart/nlp_chinese_corpus">nlp_chinese_corpus</a>:包含多个拥有数千万句子的语料的数据集。
+
+#### 2) 生成预训练数据
+包括使用参照DOC-SENTENCES的形式，连续从一个文档中获得数据；以及做全词遮蔽(whole word mask)
+
+shell脚本，批量将多个txt文本转化为tfrecord的数据。如将第1到10个txt转化为tfrecords文件：
+
+    nohup bash create_pretrain_data.sh 1 10 & 
+                                                                                 
+    注：在我们的实验中使用15%的比例做全词遮蔽，任务比较困难、学习难度大、收敛困难，所以我们用了10%的比例；
+
+#### 3）运行预训练命令
+去掉next sentence prediction任务
+    
+    export BERT_BASE_DIR=<path_of_robert_or_bert_model>
+    nohup python3 run_pretraining.py --input_file=./tf_records_all/tf*.tfrecord  \
+    --output_dir=my_new_model_path --do_train=True --do_eval=True --bert_config_file=$BERT_BASE_DIR/bert_config.json \
+    --train_batch_size=8192 --max_seq_length=256 --max_predictions_per_seq=23 \
+    --num_train_steps=200000 --num_warmup_steps=10000 --learning_rate=1e-4    \
+    --save_checkpoints_steps=3000  --init_checkpoint=$BERT_BASE_DIR/bert_model.ckpt  &
+
+    注：如果你重头开始训练，可以不指定init_checkpoint；
+    如果你从现有的模型基础上训练，指定一下BERT_BASE_DIR的路径，并确保bert_config_file和init_checkpoint两个参数的值能对应到相应的文件上；
+    领域上的预训练，可以不用训练特别久。
 
 Learning Curve 学习曲线
 -------------------------------------------------
