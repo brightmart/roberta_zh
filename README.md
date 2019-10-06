@@ -8,6 +8,8 @@ RoBERTa是BERT的改进版，通过改进训练任务和数据生成方式、训
 
 *** 2019-09-08 更新： 添加国内下载地址、PyTorch版本、与多个模型bert-wwm、xlnet等模型效果初步对比 ***
 
+Pre-trained model of <a href="https://github.com/brightmart/albert_zh">albert, chinese version</a> is also available for you now.
+
 中文预训练RoBERTa模型-下载
 -------------------------------------------------
 ###### ** 推荐 RoBERTa-zh-Large 通过验证**
@@ -206,6 +208,25 @@ shell脚本：批量将多个txt文本转化为tfrecord的数据。
 Learning Curve 学习曲线
 -------------------------------------------------
 <img src="https://github.com/brightmart/roberta_zh/blob/master/resources/RoBERTa_zh_Large_Learning_Curve.png"  width="70%" height="60%" />
+
+对显存的要求 Trade off between batch Size and sequence length
+-------------------------------------------------
+
+System       | Seq Length | Max Batch Size
+------------ | ---------- | --------------
+`RoBERTa-Base`  | 64         | 64
+...          | 128        | 32
+...          | 256        | 16
+...          | 320        | 14
+...          | 384        | 12
+...          | 512        | 6
+`RoBERTa-Large` | 64         | 12
+...          | 128        | 6
+...          | 256        | 2
+...          | 320        | 1
+...          | 384        | 0
+...          | 512        | 0
+
 
 
 #### 技术交流与问题讨论QQ群: 836811304
