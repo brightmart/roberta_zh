@@ -12,6 +12,9 @@ Pre-trained model of <a href="https://github.com/brightmart/albert_zh">albert, c
 
 中文预训练RoBERTa模型-下载
 -------------------------------------------------
+*** 6层RoBERTa体验版 ***
+RoBERTa-zh-Layer6: <a href="https://drive.google.com/file/d/1QXFqD6Qm8H9bRSbw7yZIgTGxD0O6ejUq/view?usp=sharing"> Google Drive</a> 或 <a href="https://pan.baidu.com/s/1TfKz-d9wvfqct8vN0c-vjg">百度网盘</a>，TensorFlow版本，Bert 直接加载, 大小为200M
+
 ###### ** 推荐 RoBERTa-zh-Large 通过验证**
 RoBERTa-zh-Large: <a href='https://drive.google.com/open?id=1W3WgPJWGVKlU9wpUYsdZuurAIFKvrl_Y'> Google Drive </a> 或 <a href="https://pan.baidu.com/s/1Rk_QWqd7-wBTwycr91bmug">百度网盘</a> ，TensorFlow版本，Bert 直接加载
 
