@@ -104,6 +104,39 @@ BERT-wwm-ext来自于<a href="https://github.com/ymcui/Chinese-BERT-wwm">这里<
 
 注：RoBERTa_l24_zh，只跑了两次，Performance可能还会提升。保持训练轮次和论文一致：
 
+### 阅读理解测试
+目前阅读理解类问题bert和roberta最优参数均为epoch2, batch=32, lr=3e-5, warmup=0.1
+
+#### cmrc2018(阅读理解)
+
+| models | DEV |
+| ------ | ------ |
+| sibert_base | F1:87.521(88.628) EM:67.381(69.152) |
+| sialbert_middle | F1:87.6956(87.878) EM:67.897(68.624) |
+| 哈工大讯飞 roberta_wwm_ext_base | F1:87.521(88.628) EM:67.381(69.152) |
+| brightmart roberta_middle | F1:86.841(87.242) EM:67.195(68.313) |
+| brightmart roberta_large | **F1:88.608(89.431) EM:69.935(72.538)** |
+
+#### DRCD(阅读理解)
+
+| models | DEV |
+| ------ | ------ |
+| siBert_base | F1:93.343(93.524) EM:87.968(88.28) |
+| siALBert_middle | F1:93.865(93.975) EM:88.723(88.961) |
+| 哈工大讯飞 roberta_wwm_ext_base | F1:94.257(94.48) EM:89.291(89.642) |
+| brightmart roberta_large | **F1:94.933(95.057) EM:90.113(90.238)** |
+
+#### CJRC(带有yes,no,unkown的阅读理解)
+
+| models | DEV |
+| ------ | ------ |
+| siBert_base | F1:80.714(81.14) EM:64.44(65.04) |
+| siALBert_middle | F1:80.9838(81.299) EM:63.796(64.202) |
+| 哈工大讯飞 roberta_wwm_ext_base | F1:81.510(81.684) EM:64.924(65.574) |
+| brightmart roberta_large | F1:80.16(80.475) EM:65.249(66.133) |
+
+阅读理解测试对比数据来源<a href="https://github.com/ewrfcas/bert_cn_finetune">bert_cn_finetune</a>
+
 ? 处地方，将会很快更新到具体的值
 
 RoBERTa中文版 Chinese Version
