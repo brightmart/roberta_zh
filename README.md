@@ -6,7 +6,9 @@ RoBERTa是BERT的改进版，通过改进训练任务和数据生成方式、训
 
 本项目是用TensorFlow实现了在大规模中文上RoBERTa的预训练，也会提供PyTorch的预训练模型和加载方式。
 
-*** 2019-09-08 更新： 添加国内下载地址、PyTorch版本、与多个模型bert-wwm、xlnet等模型效果初步对比 ***
+*** 2019-10-12：添加【阅读理解】不同模型上测试效果对比 ***
+
+*** 2019-09-08： 添加国内下载地址、PyTorch版本、与多个模型bert-wwm、xlnet等模型效果初步对比 ***
 
 Pre-trained model of <a href="https://github.com/brightmart/albert_zh">albert, chinese version</a> is also available for you now.
 
