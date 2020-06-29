@@ -558,10 +558,12 @@ def create_masked_lm_predictions(tokens, masked_lm_prob,
                 # 10% of the time, replace with random word
                 else:
                     masked_token = vocab_words[rng.randint(0, len(vocab_words) - 1)]
-
+            
+            # 获取真实标签（没有'##'）
+            masked_lms.append(MaskedLmInstance(index=index, label=output_tokens[index]))
             output_tokens[index] = masked_token
 
-            masked_lms.append(MaskedLmInstance(index=index, label=tokens[index]))
+            
     assert len(masked_lms) <= num_to_predict
     masked_lms = sorted(masked_lms, key=lambda x: x.index)
 
