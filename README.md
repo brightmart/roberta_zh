@@ -159,7 +159,7 @@ RoBERTa中文版 Chinese Version
 
 除以上外，本项目中文版，使用了全词mask(whole word mask)。在全词Mask中，如果一个完整的词的部分WordPiece子词被mask，则同属该词的其他部分也会被mask，即全词Mask。
 
-本项目中并没有直接实现dynamic mask。通过复制一个训练样本得到多份数据，每份数据使用不同mask，并加大复制的分数，可间接得到dynamic mask效果。
+本项目中并没有直接实现dynamic mask。通过复制一个训练样本得到多份数据，每份数据使用不同mask，并加大复制的份数，可间接得到dynamic mask效果。
 
 ##### 使用说明 Instructions for Use
 
