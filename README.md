@@ -11,7 +11,7 @@ RoBERTa是BERT的改进版，通过改进训练任务和数据生成方式、训
 *** 2019-09-08： 添加国内下载地址、PyTorch版本、与多个模型bert-wwm、xlnet等模型效果初步对比 ***
 
 
- <a href="https://www.qclue.cn/demo">NLP自动标注工具（提效最多100X）-预约</a>
+ <a href="https://www.modelfun.cn/demo">NLP自动标注工具（提效最多100X）-预约</a>
  
 Pre-trained model of <a href="https://github.com/brightmart/albert_zh">albert, chinese version</a> is also available for you now.
 
