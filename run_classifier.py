@@ -25,6 +25,7 @@ import modeling
 import optimization_finetuning as optimization
 import tokenization
 import tensorflow as tf
+import numpy as np
 # from loss import bi_tempered_logistic_loss
 
 flags = tf.flags
@@ -546,8 +547,8 @@ def model_fn_builder(bert_config, num_labels, init_checkpoint, learning_rate,
       init_string = ""
       if var.name in initialized_variable_names:
         init_string = ", *INIT_FROM_CKPT*"
-      tf.logging.info("  name = %s, shape = %s%s", var.name, var.shape,
-                      init_string)
+      # tf.logging.info("  name = %s, shape = %s%s", var.name, var.shape,
+      #                 init_string)
 
     output_spec = None
     if mode == tf.estimator.ModeKeys.TRAIN:
@@ -958,17 +959,24 @@ def main(_):
     result = estimator.predict(input_fn=predict_input_fn)
 
     output_predict_file = os.path.join(FLAGS.output_dir, "test_results.tsv")
+    output_predict_show_file = os.path.join(FLAGS.output_dir, "test_results_for_show.tsv")
+    slines = processor._read_tsv(FLAGS.data_dir)
+    swriter = tf.gfile.GFile(output_predict_show_file, "w")
     with tf.gfile.GFile(output_predict_file, "w") as writer:
       num_written_lines = 0
       tf.logging.info("***** Predict results *****")
       for (i, prediction) in enumerate(result):
         probabilities = prediction["probabilities"]
+        li = label_list[np.argmax(probabilities)]
+        output_line_show = "%s#%s\n" % ("\t".join(slines[i]), li)
+        tf.logging.info(output_line_show)
         if i >= num_actual_predict_examples:
           break
         output_line = "\t".join(
             str(class_probability)
             for class_probability in probabilities) + "\n"
         writer.write(output_line)
+        swriter.write(output_line_show)
         num_written_lines += 1
     assert num_written_lines == num_actual_predict_examples
 
