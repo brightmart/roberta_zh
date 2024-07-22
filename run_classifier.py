@@ -965,18 +965,20 @@ def main(_):
         probabilities = prediction["probabilities"]
         if i >= num_actual_predict_examples:
           break
+        else:
+            pass
         output_line = "\t".join(
             str(class_probability)
             for class_probability in probabilities) + "\n"
-        writer.write(output_line)
-        num_written_lines += 1
+        # writer.write(output_line)
+        # num_written_lines += 1
     assert num_written_lines == num_actual_predict_examples
 
 
 if __name__ == "__main__":
   flags.mark_flag_as_required("data_dir")
   flags.mark_flag_as_required("task_name")
-  flags.mark_flag_as_required("vocab_file")
-  flags.mark_flag_as_required("bert_config_file")
-  flags.mark_flag_as_required("output_dir")
+  # flags.mark_flag_as_required("vocab_file")
+  # flags.mark_flag_as_required("bert_config_file")
+  # flags.mark_flag_as_required("output_dir")
   tf.app.run()
